@@ -1,0 +1,58 @@
++-----------------------------------------------------------------+
+| atari battlezone notes                                          |
+|-----------------------------------------------------------------|
+| disc use                                                        |
+|-----------------------------------------------------------------|
+| disc load/save of high scores/service settings requires page    |
+| at &0e00 i.e. a dfs that does not require user memory           |
+|-----------------------------------------------------------------|
+| arm second processor                                            |
+|-----------------------------------------------------------------|
+| for bbc machines that have an arm* second processor attached it |
+| will be detected on load up                                     |
+|                                                                 |
+| arm v7tdmi 64mhz\1ghz pitube second processor native mode       |
+| confirmed working                                               |
+|                                                                 |
+| default is to start up with mathbox deactivated if arm present  |
+|                                                                 |
+| the arm mathbox will take on the three-dimensional functions    |
+| that the original hardware supported plus it will clip and      |
+| render all the required vectors that was originally executed    |
+| by the vector generator                                         |
+|                                                                 |
+| service menu will display an arm mathbox message s(low) and     |
+| f(ast) when activated, at present this is acted upon            |
+|                                                                 |
+| *arm evaluation will not work principally because the multiply  |
+| instruction is used extensively in the mathbox                  |
+|-----------------------------------------------------------------|
+| cosmetic changes from the original arcade machine               |
+| conversion based on romset revision 2                           |
+|                                                                 |
+| service menu    - dip switch setting replaced using keys and    |
+|                   values displayed                              |
+|                   settings persisted to disc as per later       |
+|                   third-party add-on board using non-volatile   |
+|                   ram                                           |
+| general         - some centering of on screen text etc          |
+| model display   - testing for the mesh objects and routines     |
+|-----------------------------------------------------------------|
+| interesting stuff                                               |
+|-----------------------------------------------------------------|
+| all rotations of objects etc are around the y-axis only         |
+|                                                                 |
+| receding text is pre-tilted so all that needs calculating is    |
+| the view transform                                              |
+|                                                                 |
+| objects are culled in the view fustrum according to z-coor not  |
+| distance so as you rotate on the spot a distant object may be   |
+| viewable at the sides but not when in front                     |
+|                                                                 |
+| the tank/super tank may kill you on your last life but if your  |
+| shot kills it you will get an extra life if the score is enough |
+|                                                                 |
+| tanks can shoot flying saucers but you will not get any points  |
+|                                                                 |
+| the exploding star pattern is the same as in atari asteroids    |
++-----------------------------------------------------------------+
